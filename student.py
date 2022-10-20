@@ -26,7 +26,7 @@ class Assignments:
         total = 0
         if self.counter >= 1:
             for i in self.assignment_list:
-                grade += i[1][0] / i[1][1] * 100
+                grade += i[1][0] 
                 total += i[1][1]
         return grade / total * 100
 
