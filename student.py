@@ -28,6 +28,9 @@ class Assignments:
             for i in self.assignment_list:
                 grade += i[1][0] 
                 total += i[1][1]
+
+        if total == 0:
+            return -1
         return grade / total * 100
 
 bob = Student('Bob')
