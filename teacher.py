@@ -11,4 +11,4 @@ def assignment_maker(student):
         student.assignments.make_assignment(res1, res3, res2)
         assignment_maker(student)
     else:
-        print(student.assignments.final_grade())
+        print("{} has a {}% in class.".format(student.name, student.assignments.final_grade()))
