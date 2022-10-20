@@ -15,17 +15,24 @@ class Assignments:
     def __init__(self):
         self.assignment_list = []
 
+        self.counter = 0
+
     def make_assignment(self, name, earned_grade, total_grade):
-        self.assignment_list.append([ name, [earned_grade, total_grade]])
+        self.assignment_list.append([ name, [earned_grade, total_grade] ])
+        self.counter += 1
     
     def final_grade(self):
-        for i in self.assignment_list:
-            grade = i[1][0] / i[1][1] * 100
-        return grade
+        grade = 0
+        total = 0
+        if self.counter >= 1:
+            for i in self.assignment_list:
+                grade += i[1][0] / i[1][1] * 100
+                total += i[1][1]
+        return grade / total * 100
 
 bob = Student('Bob')
-bob.assignments.make_assignment('test 1', 100, 90)
+bob.assignments.make_assignment('test 1', 90, 100)
 bob.assignments.make_assignment('test 2', 100, 100)
 
-students = Students()
-students.add_student(bob)
+students1 = Students()
+students1.add_student(bob)
